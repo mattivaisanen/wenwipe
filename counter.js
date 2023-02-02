@@ -1,4 +1,4 @@
-var end = new Date('02/02/2023 21:00');
+var end = new Date('02/02/2023 19:00Z');
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -28,3 +28,4 @@ var end = new Date('02/02/2023 21:00');
     }
 
     timer = setInterval(showRemaining, 1000);
+    
