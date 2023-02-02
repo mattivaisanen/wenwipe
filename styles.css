@@ -27,3 +27,7 @@ footer{
 
 }
 
+article{
+    width:100%;
+    min-width: 576px;
+}
