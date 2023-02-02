@@ -1,4 +1,7 @@
-var end = new Date('02/02/2023 19:00Z');
+const d = new Date();
+let month = d.getMonth();
+
+var end = new Date('03/02/2023 19:00Z');
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -21,10 +24,10 @@ var end = new Date('02/02/2023 19:00Z');
         var minutes = Math.floor((distance % _hour) / _minute);
         var seconds = Math.floor((distance % _minute) / _second);
 
-        document.getElementById('countdown').innerHTML = days + 'days ';
-        document.getElementById('countdown').innerHTML += hours + 'hrs ';
-        document.getElementById('countdown').innerHTML += minutes + 'mins ';
-        document.getElementById('countdown').innerHTML += seconds + 'secs';
+        document.getElementById('countdown').innerHTML = '~' + days + ' days ';
+        document.getElementById('countdown').innerHTML += hours + ' hrs ';
+        document.getElementById('countdown').innerHTML += minutes + ' mins ';
+        document.getElementById('countdown').innerHTML += seconds + ' secs';
     }
 
     timer = setInterval(showRemaining, 1000);
