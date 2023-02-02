@@ -1,7 +1,7 @@
 const d = new Date();
 let month = d.getMonth();
 
-var end = new Date('03/02/2023 19:00Z');
+var end = new Date('03/02/2023 19:00:00');
 
     var _second = 1000;
     var _minute = _second * 60;
