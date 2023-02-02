@@ -24,10 +24,8 @@ footer{
     color: white;
     bottom: 0;
     width: 100%;
+    height: 10vh;
+    position: fixed;
 
 }
 
-article{
-    width:100%;
-    min-width: 576px;
-}
