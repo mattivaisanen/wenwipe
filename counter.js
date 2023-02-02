@@ -12,7 +12,7 @@ var end = new Date('02/02/2023 21:00');
         if (distance < 0) {
 
             clearInterval(timer);
-            document.getElementById('countdown').innerHTML = 'WIPE IS NOW!';
+            document.getElementById('countdown').innerHTML = 'JUST WIPED!';
 
             return;
         }
