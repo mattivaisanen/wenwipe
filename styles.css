@@ -30,6 +30,10 @@ footer{
 }
 
 #timers{
-width: 250px;
-
+width: 100%;
 }
+
+.dark-mode {
+    background-color: black;
+    color: white;
+  }
