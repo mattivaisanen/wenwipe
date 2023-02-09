@@ -8,11 +8,11 @@ function biWeeklyCountDown() {
     const diff = targetDate.diff(now);
     const duration = moment.duration(diff);
     const days = duration.days();
-    const hours = duration.hours();
-    const minutes = duration.minutes();
-    const seconds = duration.seconds();
+    const hours = String(duration.hours()).padStart(2, "0");
+    const minutes = String(duration.minutes()).padStart(2, "0");
+    const seconds = String(duration.seconds()).padStart(2, "0");
     document.getElementById("biweekly-countdown").innerHTML =
-     "~" + days + " days " + hours + ":" + minutes + ":" + seconds;
+     "~" + days + " days \n" + hours + ":" + minutes + ":" + seconds;
   
   
       setTimeout(biWeeklyCountDown, 1000);
