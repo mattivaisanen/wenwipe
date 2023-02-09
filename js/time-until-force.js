@@ -19,6 +19,3 @@ function forceCountDown() {
 
   setTimeout(forceCountDown, 1000);
 };
-
-forceCountDown();
-
