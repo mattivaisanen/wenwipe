@@ -20,13 +20,9 @@
 }
 
 footer{
-    background-color: black;
-    color: white;
-    bottom: 0;
-    width: 100%;
-    height: 10vh;
-    position: fixed;
-
+position: bottom;
+background-color: black;
+color: white;
 }
 
 #timers{
@@ -37,3 +33,7 @@ width: 100%;
     background-color: black;
     color: white;
   }
+
+#copy{
+    bottom: 0;
+}
