@@ -19,13 +19,15 @@
     justify-content: flex-end;
 }
 
+
+
 footer{
 position: fixed;
 background-color: black;
 color: white;
 position: absolute; 
 bottom: 0;
-height: 200px;
+flex-grow: 1;
 }
 
 #timers{
