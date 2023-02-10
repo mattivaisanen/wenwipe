@@ -32,7 +32,13 @@ width: 100%;
 .dark-mode {
     background-color: black;
     color: white;
-  }
+    transition: background 0.2s;
+}
+
+body{
+    background-color: white;
+    transition: background 0.4s;
+}
 
 #copy{
     bottom: 0;
