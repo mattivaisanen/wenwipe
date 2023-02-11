@@ -19,15 +19,12 @@
     justify-content: flex-end;
 }
 
-
-
-footer{
-position: fixed;
-background-color: black;
+#footer{
+background: black;
 color: white;
-position: absolute; 
-bottom: 0;
-flex-grow: 1;
+position:absolute;
+bottom:0;
+width:100%;
 }
 
 #timers{
