@@ -19,11 +19,20 @@
     justify-content: flex-end;
 }
 
-#footer{
-background: black;
-color: white;
-bottom:0;
-width:100%;
+.footer{
+    background: black;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    margin-left: 0px;
+    height: 100%;
+    margin-right: 0px;
+
+}
+
+footer{
+    background: black;
+    height: 100%;
 }
 
 #timers{
