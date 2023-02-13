@@ -62,3 +62,15 @@ body{
 .nodecoration :hover{
     color:white;
 }
+
+.countdown{
+    width: 110px;
+    display: inline-block;
+    text-align: left;
+  }
+  
+.countdown-date{
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+  }
