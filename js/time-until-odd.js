@@ -1,10 +1,10 @@
 function oddCountDown() {
   const now = moment();
-  const nextMonday = moment().day("Monday");
-  if (nextMonday.isBefore(now)) {
-    nextMonday.add(1, "week");
+  const nearestMonday = moment().startOf('week');
+  if (nearestMonday.isBefore(now)) {
+    nearestMonday.add(1, "week");
   }
-  const targetDate = moment(nextMonday).tz("America/New_York").hour(14).minute(0).second(0);
+  const targetDate = moment(nearestMonday).tz("America/New_York").hour(14).minute(0).second(0);
   const diff = targetDate.diff(now);
   const duration = moment.duration(diff);
   const days = duration.days();
