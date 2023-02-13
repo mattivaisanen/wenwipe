@@ -13,6 +13,8 @@ function oddCountDown() {
   const seconds = String(duration.seconds()).padStart(2, "0");
   document.getElementById("odd-countdown").innerHTML =
   "~" + days + " days \n" + hours + ":" + minutes + ":" + seconds;
+  localDate = moment(targetDate).local();
+  document.getElementById("odd-countdown-date").innerHTML = moment(localDate).format('Do MMMM, hh:mm:ss');
 
     setTimeout(oddCountDown, 1000);
 }

@@ -16,6 +16,8 @@ function weeklyCountDown() {
   const seconds = String(duration.seconds()).padStart(2, "0");
   document.getElementById("weekly-countdown").innerHTML =
   "~" + days + " days \n" + hours + ":" + minutes + ":" + seconds;
+  localDate = moment(targetDate).local();
+  document.getElementById("weekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, hh:mm:ss');
 
   setTimeout(weeklyCountDown, 1000);
 }

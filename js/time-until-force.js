@@ -16,6 +16,8 @@ function forceCountDown() {
 
   document.getElementById("force-countdown").innerHTML =
   "~" + days + " days " +  hours + ":" + minutes + ":" + seconds;
+  localDate = moment(targetDate).local();
+  document.getElementById("force-countdown-date").innerHTML = moment(localDate).format('Do MMMM, hh:mm:ss');
 
   setTimeout(forceCountDown, 1000);
 };
