@@ -30,7 +30,7 @@ function biWeeklyCountDown() {
   const hours = String(duration.hours()).padStart(2, "0");
   const minutes = String(duration.minutes()).padStart(2, "0");
   const seconds = String(duration.seconds()).padStart(2, "0");
-  document.getElementById("biweekly-countdown").innerHTML = "~" + days + " days \n" + hours + ":" + minutes + ":" + seconds;
+  document.getElementById("biweekly-countdown").innerHTML = days + " days \n" + hours + ":" + minutes + ":" + seconds;
   localDate = moment(targetDate).local();
   document.getElementById("biweekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
 

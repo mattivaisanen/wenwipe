@@ -14,8 +14,7 @@ function forceCountDown() {
   const minutes = duration.minutes().toString().padStart(2, '0');
   const seconds = duration.seconds().toString().padStart(2, '0');
 
-  document.getElementById("force-countdown").innerHTML =
-  "~" + days + " days " +  hours + ":" + minutes + ":" + seconds;
+  document.getElementById("force-countdown").innerHTML = days + " days " +  hours + ":" + minutes + ":" + seconds;
   localDate = moment(targetDate).local();
   document.getElementById("force-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
 
