@@ -13,7 +13,7 @@ function biWeeklyCountDown() {
   const seconds = String(duration.seconds()).padStart(2, "0");
   document.getElementById("biweekly-countdown").innerHTML = "~" + days + " days \n" + hours + ":" + minutes + ":" + seconds;
   localDate = moment(targetDate).local();
-  document.getElementById("biweekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, hh:mm:ss');
+  document.getElementById("biweekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
 
     setTimeout(biWeeklyCountDown, 1000);
 }

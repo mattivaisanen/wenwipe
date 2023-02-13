@@ -14,7 +14,7 @@ function oddCountDown() {
   document.getElementById("odd-countdown").innerHTML =
   "~" + days + " days \n" + hours + ":" + minutes + ":" + seconds;
   localDate = moment(targetDate).local();
-  document.getElementById("odd-countdown-date").innerHTML = moment(localDate).format('Do MMMM, hh:mm:ss');
+  document.getElementById("odd-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
 
     setTimeout(oddCountDown, 1000);
 }

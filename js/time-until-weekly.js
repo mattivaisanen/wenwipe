@@ -17,7 +17,7 @@ function weeklyCountDown() {
   document.getElementById("weekly-countdown").innerHTML =
   "~" + days + " days \n" + hours + ":" + minutes + ":" + seconds;
   localDate = moment(targetDate).local();
-  document.getElementById("weekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, hh:mm:ss');
+  document.getElementById("weekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
 
   setTimeout(weeklyCountDown, 1000);
 }
