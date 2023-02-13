@@ -11,7 +11,10 @@ function oddCountDown() {
   const hours = String(duration.hours()).padStart(2, "0");
   const minutes = String(duration.minutes()).padStart(2, "0");
   const seconds = String(duration.seconds()).padStart(2, "0");
-  document.getElementById("odd-countdown").innerHTML = days + " days \n" + hours + ":" + minutes + ":" + seconds;
+
+  if(days<2) document.getElementById("odd-countdown").innerHTML = days + " day \n" + hours + ":" + minutes + ":" + seconds;
+  else document.getElementById("odd-countdown").innerHTML = days + " days \n" + hours + ":" + minutes + ":" + seconds;
+  
   localDate = moment(targetDate).local();
   document.getElementById("odd-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
 

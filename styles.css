@@ -53,3 +53,12 @@ body{
 #copy{
     bottom: 0;
 }
+
+.nodecoration{
+    color: white;
+
+}
+
+.nodecoration :hover{
+    color:white;
+}
