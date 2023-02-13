@@ -14,7 +14,7 @@ function biWeeklyCountDown() {
 
   else firstThursday.add(2, 'weeks');
 
-  if (firstThursday.isBefore(moment(), 'day')) {
+  if (nextThursday.isBefore(moment(), 'day')) {
     firstThursday.add(4, 'weeks');
   }
 
@@ -23,7 +23,7 @@ function biWeeklyCountDown() {
   //while (nextSecondThursday.isBefore(now)) {
   //  nextSecondThursday.add(2, "weeks");
   //}
-  const targetDate = moment(nextThursday).tz("America/New_York").hour(14).minute(0).second(0);
+  const targetDate = moment(firstThursday).tz("America/New_York").hour(14).minute(0).second(0);
   const diff = targetDate.diff(now);
   const duration = moment.duration(diff);
   const days = duration.days();
