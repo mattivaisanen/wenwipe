@@ -74,3 +74,7 @@ body{
     display: inline-block;
     text-align: left;
   }
+
+.timertitle{
+    white-space:nowrap
+}
