@@ -1,8 +1,7 @@
 function forceCountDown() {
   const now = moment();
   const currentMonth = now.month();
-  const firstThursday = moment().month(currentMonth).date(1)
-    .day("Thursday");
+  const firstThursday = moment().month(currentMonth).date(1).day("Thursday");
   if (firstThursday.isBefore(now)) {
     firstThursday.add(1, "month");
   }

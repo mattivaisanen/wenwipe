@@ -1,37 +1,37 @@
 function biWeeklyCountDown() {
   const now = moment();
+  const currentMonth = now.month();
+  const firstThursday = moment().month(currentMonth).date(1).day("Thursday");
 
-  //find first thursday of month.
-  let firstThursday = moment().startOf('month');
-  while (firstThursday.day() !== 4) {firstThursday.add(1, 'day');}
+  if (firstThursday.isBefore(now)) {
+    nextWipe = firstThursday.add(2, "week").tz("America/New_York").hour(14).minute(0).second(0);
+  } 
 
-  //find next thursdday
-  let nextThursday = moment().startOf('day');
-  while (nextThursday.day() !== 4) {nextThursday.add(1, 'day');}
-
-  if (firstThursday.isSame(nextThursday, 'day')){
-    firstThursday = targetDate}
-
-  else firstThursday.add(2, 'weeks');
-
-  if (nextThursday.isBefore(moment(), 'day')) {
-    firstThursday.add(4, 'weeks');
+  else if(firstThursday.add(2, "week").isBefore(now)) {
+    nextWipe = firstThursday.add(4, "week").tz("America/New_York").hour(14).minute(0).second(0)
   }
 
-  const targetDate = moment(firstThursday).tz("America/New_York").hour(14).minute(0).second(0);
-  const diff = targetDate.diff(now);
-  const duration = moment.duration(diff);
+  else nextWipe = firstThursday.tz("America/New_York").hour(14).minute(0).second(0);
+
+  const diff = nextWipe.diff(now);
+  if (diff < 0) {
+  nextWipe.add(1, "week");
+  }
+  const duration = moment.duration(nextWipe.diff(now));
   const days = duration.days();
   const hours = String(duration.hours()).padStart(2, "0");
   const minutes = String(duration.minutes()).padStart(2, "0");
   const seconds = String(duration.seconds()).padStart(2, "0");
-
-  if(days<2) document.getElementById("biweekly-countdown").innerHTML = days + " day \n" + hours + ":" + minutes + ":" + seconds;
-  else document.getElementById("biweekly-countdown").innerHTML = days + " days \n" + hours + ":" + minutes + ":" + seconds;
-
-
-  localDate = moment(targetDate).local();
+  
+  let countdownString = "";
+  if(days<2) countdownString += days + " day \n";
+  else countdownString += days + " days \n";
+  countdownString += hours + ":" + minutes + ":" + seconds;
+  
+  document.getElementById("biweekly-countdown").innerHTML = countdownString;
+  
+  localDate = moment(nextWipe).local();
   document.getElementById("biweekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
-
-    setTimeout(biWeeklyCountDown, 1000);
-}
+  
+  setTimeout(biWeeklyCountDown, 1000);
+  }
