@@ -23,9 +23,9 @@ function biWeeklyCountDown() {
 
   let countdownString = "";
   if (days < 2) {
-    countdownString += days + " day \n";
+    countdownString += days + " day ";
   } else {
-    countdownString += days + " days \n";
+    countdownString += days + " days ";
   }
   countdownString += hours + ":" + minutes + ":" + seconds;
 
