@@ -11,10 +11,6 @@ function biWeeklyCountDown() {
   else nextWipe = firstThursday;
 
   const targetDate = moment(nextWipe).tz("America/New_York").hour(14).minute(0).second(0);
-  const diff = targetDate.diff(now);
-  if (diff < 0) {
-    targetDate.add(1, "week");
-  }
   const duration = moment.duration(targetDate.diff(now));
   const days = duration.days();
   const hours = String(duration.hours()).padStart(2, "0");
@@ -30,7 +26,7 @@ function biWeeklyCountDown() {
   }
 
   else{
-    
+
     if(days<2) document.getElementById("biweekly-countdown").innerHTML = days + " day " + hours + ":" + minutes + ":" + seconds;
     else document.getElementById("biweekly-countdown").innerHTML = days + " days " + hours + ":" + minutes + ":" + seconds;
 
