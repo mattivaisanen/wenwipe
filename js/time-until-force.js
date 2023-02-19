@@ -13,11 +13,22 @@ function forceCountDown() {
   const minutes = duration.minutes().toString().padStart(2, '0');
   const seconds = duration.seconds().toString().padStart(2, '0');
 
-  if(days<2) document.getElementById("force-countdown").innerHTML = days + " day " +  hours + ":" + minutes + ":" + seconds;
-  else document.getElementById("force-countdown").innerHTML = days + " days " +  hours + ":" + minutes + ":" + seconds;
-  
-  localDate = moment(targetDate).local();
-  document.getElementById("force-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
 
-  setTimeout(forceCountDown, 1000);
-};
+  const lastReset = moment().subtract(10, "minutes"); // check if last reset was less than 10 minutes ago
+  if (now.diff(lastReset) <= 0) {
+    const timeSinceReset = moment.duration(now.diff(lastReset));
+    countdownString = "Last wiped " + timeSinceReset.hours() + ":" + timeSinceReset.minutes() + ":" + timeSinceReset.seconds() + " ago!";
+  }
+
+  else{
+
+    if(days<2) document.getElementById("force-countdown").innerHTML = days + " day " +  hours + ":" + minutes + ":" + seconds;
+    else document.getElementById("force-countdown").innerHTML = days + " days " +  hours + ":" + minutes + ":" + seconds;
+    
+    localDate = moment(targetDate).local();
+    document.getElementById("force-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
+
+    setTimeout(forceCountDown, 1000);
+  }
+  
+}
