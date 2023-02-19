@@ -19,7 +19,6 @@ function oddCountDown() {
   }
 
   else{
-
     if(days<2) document.getElementById("odd-countdown").innerHTML = days + " day \n" + hours + ":" + minutes + ":" + seconds;
     else document.getElementById("odd-countdown").innerHTML = days + " days \n" + hours + ":" + minutes + ":" + seconds;
     

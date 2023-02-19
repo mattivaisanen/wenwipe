@@ -15,14 +15,6 @@ function weeklyCountDown() {
     const minutes = String(duration.minutes()).padStart(2, "0");
     const seconds = String(duration.seconds()).padStart(2, "0");
   
-    let countdownString = "";
-    if (days < 2) {
-      countdownString += days + " day \n";
-    } else {
-      countdownString += days + " days \n";
-    }
-    countdownString += hours + ":" + minutes + ":" + seconds;
-  
     const lastReset = moment().subtract(10, "minutes"); // check if last reset was less than 10 minutes ago
     if (now.diff(lastReset) <= 0) {
       const timeSinceReset = moment.duration(now.diff(lastReset));
@@ -30,12 +22,13 @@ function weeklyCountDown() {
     }
   
     else{
-        document.getElementById("weekly-countdown").innerHTML = countdownString;
-
-        localDate = moment(targetDate).local();
-        document.getElementById("weekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
-        
-        setTimeout(weeklyCountDown, 1000);
+      if(days<2) document.getElementById("weekly-countdown").innerHTML = days + " day \n" + hours + ":" + minutes + ":" + seconds;
+      else document.getElementById("weekly-countdown").innerHTML = days + " days \n" + hours + ":" + minutes + ":" + seconds;
+      
+      localDate = moment(targetDate).local();
+      document.getElementById("weekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
+  
+      setTimeout(oddCountDown, 1000);
     }
     
   }
