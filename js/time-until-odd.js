@@ -1,6 +1,6 @@
 function oddCountDown() {
   const now = moment();
-  const nearestMonday = moment().startOf('week');
+  const nearestMonday = moment().day("Monday");
   if (nearestMonday.isBefore(now)) {
     nearestMonday.add(1, "week");
   }
