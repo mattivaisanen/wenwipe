@@ -21,13 +21,7 @@ function biWeeklyCountDown() {
   const minutes = String(duration.minutes()).padStart(2, "0");
   const seconds = String(duration.seconds()).padStart(2, "0");
 
-  let countdownString = "";
-  if (days < 2) {
-    countdownString += days + " day ";
-  } else {
-    countdownString += days + " days ";
-  }
-  countdownString += hours + ":" + minutes + ":" + seconds;
+
 
   const lastReset = moment().subtract(10, "minutes"); // check if last reset was less than 10 minutes ago
   if (now.diff(lastReset) <= 0) {
@@ -36,7 +30,9 @@ function biWeeklyCountDown() {
   }
 
   else{
-      document.getElementById("biweekly-countdown").innerHTML = countdownString;
+    
+    if(days<2) document.getElementById("biweekly-countdown").innerHTML = days + " day " + hours + ":" + minutes + ":" + seconds;
+    else document.getElementById("biweekly-countdown").innerHTML = days + " days " + hours + ":" + minutes + ":" + seconds;
 
       localDate = moment(targetDate).local();
       document.getElementById("biweekly-countdown-date").innerHTML = moment(localDate).format('Do MMMM, HH:mm:ss');
